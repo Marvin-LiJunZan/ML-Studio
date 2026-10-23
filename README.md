@@ -6,7 +6,7 @@
 
 桌面端机器学习工作台 · 本地优先 · 数据不出机器
 
-[官网](https://marvin-lijunzan.github.io/ML-Studio/) · [下载](../../releases) · [问题反馈](../../issues)
+[官网](https://marvin-lijunzan.github.io/ML-Studio/) · [下载](https://github.com/Marvin-LiJunZan/ML-Studio/releases) · [问题反馈](https://github.com/Marvin-LiJunZan/ML-Studio/issues)
 
 </div>
 
@@ -34,7 +34,7 @@ ML Studio 把数据导入、模型选择、超参数搜索、训练监控和报�
 
 ## 下载
 
-前往 [Releases](../../releases) 获取最新版本：
+前往 [Releases](https://github.com/Marvin-LiJunZan/ML-Studio/releases) 获取最新版本：
 
 | 平台 | 包 |
 |---|---|
