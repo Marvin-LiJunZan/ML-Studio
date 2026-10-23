@@ -4,10 +4,9 @@
 
   /* ============================================================
      1. 仓库地址：只改这一处，页面上所有 GitHub / Releases 链接同步
-     目前是占位，等你确认 GitHub 账号后替换，例如：
-       "https://github.com/lijunzan/ml-studio"
+        带 download-link 属性的按钮会指向 /releases
      ============================================================ */
-  var REPO_URL = "";
+  var REPO_URL = "https://github.com/Marvin-LiJunZan/ML-Studio";
 
   if (REPO_URL) {
     document.querySelectorAll("[data-repo]").forEach(function (el) {
