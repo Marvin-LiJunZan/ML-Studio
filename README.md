@@ -38,9 +38,9 @@ ML Studio 把数据导入、模型选择、超参数搜索、训练监控和报�
 
 | 平台 | 包 |
 |---|---|
-| Windows 10 / 11 (x64) | 安装包 `.exe` |
-| macOS (Apple Silicon) | `.dmg` / `.zip` |
-| Linux (x64) | `.AppImage` / `.deb` |
+| Windows 10 / 11 (x64) | `ML-Studio-Setup-1.0.0.exe` |
+| macOS (Apple Silicon) | `ML-Studio-1.0.0-mac-arm64.dmg` / `.zip` |
+| Linux (x64) | `ML-Studio-1.0.0-linux-x86_64.AppImage` / `ML-Studio-1.0.0-linux-amd64.deb` |
 
 **关于首次启动**：需要加载本地推理引擎，约 10–30 秒，期间窗口空白属于正常。
 
