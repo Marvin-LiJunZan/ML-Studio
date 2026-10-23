@@ -1,71 +1,75 @@
-# ML Studio 产品站
+<div align="center">
 
-纯静态站点，无构建步骤、无外部依赖（字体用系统栈，图标为内联 SVG）。
-与桌面端共用同一套设计令牌：Iris 色阶、语义色、8pt 间距。
+# ML Studio
+
+**从表格到实验报告，一条链路跑完**
+
+桌面端机器学习工作台 · 本地优先 · 数据不出机器
+
+[官网](https://marvin-lijunzan.github.io/ML-Studio/) · [下载](../../releases) · [问题反馈](../../issues)
+
+</div>
+
+![ML Studio 工作区](assets/img/app-workspace.png)
+
+---
+
+## 这是什么
+
+ML Studio 把数据导入、模型选择、超参数搜索、训练监控和报告导出收进同一个窗口。
+拖进一张表格，选一个任务类型，剩下的交给它跑——不用写训练脚本，也不上传数据到别人的服务器。
+
+面向需要反复做实验、又要交付结论的人：模型跑完不是终点，能生成一份带图表的实验报告才算完事。
+
+## 核心能力
+
+| 能力 | 说明 |
+|---|---|
+| **四类建模任务** | 回归、分类、聚类、时间序列，各自配好 estimator、评估指标与交叉验证策略 |
+| **自动超参寻优** | 基于 Optuna 的 TPE / CMA-ES / Random / NSGA-II，可选 Hyperband 提前停止 |
+| **训练诊断** | 残差图、学习曲线、过拟合检测、混淆矩阵、ROC/PR、轮廓系数、肘部法则、预测 vs 实际 |
+| **报告导出** | HTML / Markdown / Word / PDF 四种格式，图表随报告一起出 |
+| **工程文件** | `.ml` 工程保存与打开，模型单条与批量预测 |
+| **AI 助手** | 结果看不懂时在侧栏直接问，可接 OpenAI / DeepSeek / 通义千问等兼容接口 |
+
+## 下载
+
+前往 [Releases](../../releases) 获取最新版本：
+
+| 平台 | 包 |
+|---|---|
+| Windows 10 / 11 (x64) | 安装包 `.exe` |
+| macOS (Apple Silicon) | `.dmg` / `.zip` |
+| Linux (x64) | `.AppImage` / `.deb` |
+
+**关于首次启动**：需要加载本地推理引擎，约 10–30 秒，期间窗口空白属于正常。
+
+**关于 macOS**：安装包未做代码签名，首次打开若被 Gatekeeper 拦下，
+在应用上右键 → 打开，或到「系统设置 → 隐私与安全性」里允许一次即可。
+
+## 上手三步
+
+1. **导入数据** —— 拖入 CSV / Excel，自动识别列类型
+2. **选任务与目标** —— 选回归/分类/聚类/时间序列，指定目标列与度量
+3. **开始训练** —— 超参搜索与训练进度实时可见，结束后直接出报告
+
+## 技术栈
+
+- **后端**：FastAPI + scikit-learn + Optuna，PyInstaller 打成单文件可执行程序
+- **前端**：原生 HTML/JS + ECharts，由后端直接托管，无构建步骤
+- **桌面壳**：Electron，拉起本地后端并托管窗口
+- **数据**：全部落在本机用户目录，无外部数据库、无需 Docker
+
+## 项目结构
 
 ```
-index.html              单页
-assets/css/site.css     样式（含明暗两套令牌）
-assets/js/theme-boot.js 首帧前定主题，防闪白
-assets/js/site.js       主题切换 / 移动端导航 / 滚动入场
-assets/img/             截图与 favicon
-.nojekyll               关掉 GitHub Pages 的 Jekyll 处理
+backend/     FastAPI 应用：训练、预测、报告、诊断、任务类型
+static/      前端页面（原生 JS + ECharts），随包内置
+electron/    桌面壳与打包配置
+website/     产品站（本站）
+docs/        设计文档与验收记录
 ```
 
-## 本地预览
+## 许可
 
-```bash
-cd website
-python -m http.server 8030
-# 打开 http://127.0.0.1:8030
-```
-
-直接双击 `index.html` 也能看，但主题偏好在 `file://` 下可能受限，建议走本地服务。
-
-## 上线前必改两处
-
-1. **仓库地址**：`assets/js/site.js` 顶部的 `REPO_URL`，填了它，页面上所有
-   GitHub / Releases 链接会自动指向你的仓库。留空则维持占位地址。
-2. **下载按钮**：指向 `REPO_URL/releases`。若走 GitHub Releases 发布安装包，
-   把 `ML-Studio-Setup-x.y.z.exe` 传上去即可，无需改页面。
-
-## 部署到 GitHub Pages
-
-### 方式一：独立仓库 + 分支部署（推荐，零配置）
-
-把 `website/` 的内容作为仓库根目录推送：
-
-```bash
-cd website
-git init
-git add .
-git commit -m "ML Studio site"
-git branch -M main
-git remote add origin https://github.com/<你的账号>/ml-studio-site.git
-git push -u origin main
-```
-
-然后仓库 **Settings → Pages → Source** 选 `Deploy from a branch`，
-分支 `main`、目录 `/ (root)`，保存后等一两分钟，
-地址是 `https://<你的账号>.github.io/ml-studio-site/`。
-
-### 方式二：独立仓库 + Actions
-
-若想走 Actions 流水线，在仓库里加 `.github/workflows/pages.yml`，
-用 `actions/upload-pages-artifact` 上传整个目录再 `deploy-pages`。
-静态站用不上构建，方式一更省事。
-
-### 方式三：放在主仓库子目录
-
-主仓库根目录不是站点，Pages 的 `Deploy from a branch` 只能选 `/` 或 `/docs`。
-要么把 `website/` 改名为 `docs/`，要么用 Actions 指定 `path: website`。
-两种都可行，但都不如方式一干净。
-
-## 设计约束（改动时请守住）
-
-- **对比度**：正文 16.2:1、次级文字 7.9:1、三级小字 4.8:1，均过 WCAG AA；
-  三级色 `#686A78` 是按"最差背景"（`--bg-alt`）反推的下限，别再调浅。
-- **可达性**：跳过导航链接、语义地标、`aria-expanded` 同步、键盘焦点环、
-  `prefers-reduced-motion` 降级，均已就位。
-- **CSP**：`index.html` 头部限制了同源资源，所以不要引入 CDN 字体或内联脚本——
-  新增脚本请放 `assets/js/` 并在页面里用 `<script src>` 引入。
+MIT
