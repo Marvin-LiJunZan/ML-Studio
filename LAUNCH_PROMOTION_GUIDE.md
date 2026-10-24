@@ -123,3 +123,41 @@ AI 不需要视觉截屏，读到界面的 JSON 控件树，调一个 Tool 就�
   * **0:25 - 0:40（自动超参与动态图）**：选择目标列，点击开始训练。画面展示 Optuna 超参寻优实时跳动、学习曲线、残差分布图动态渲染。配音：“内置 Optuna 自动化超参数寻优，各种算法横向比对，训练动态图表全部实时渲染。”
   * **0:40 - 0:50（一键出报告）**：点击导出，直接弹出一份排版极其工整的 Word/PDF 实验报告。配音：“最爽的是，跑完直接一键导出带完整图表和分析结论的实验报告，直接放进汇报里！”
   * **0:50 - 0:60（开源呼吁与引导）**：展示 GitHub 页面与官网。配音：“纯单机运行，数据不出电脑。Windows/Mac 均已发布开箱即用包，代码全面开源，在 GitHub 搜索 ML Studio 即可下载，求个一键三连支持一下！”
+
+---
+
+## 🌍 宣发阵地 6：Hacker News (Show HN) —— 吸引全球硬核极客与海外 Contributor
+
+- **提交入口**：前往 [news.ycombinator.com/submit](https://news.ycombinator.com/submit)
+- **标题 (Title)**：`Show HN: ML Studio – Universal, local-first AutoML desktop app with AI-native GUI`
+- **链接 (URL)**：`https://github.com/Marvin-LiJunZan/ML-Studio`
+- **正文 (Text)**：
+
+```markdown
+Hi HN!
+
+I built and open-sourced **ML Studio** (Electron + FastAPI + Scikit-learn + Optuna), a cross-platform desktop workstation that automates the tabular machine learning pipeline end-to-end—from raw spreadsheets to publication-ready reports with zero cloud dependencies.
+
+Why I built it:
+Most domain researchers (in sciences, engineering, healthcare, economics) have tabular data and need empirical ML models, but they dread managing Python/Conda environments, writing training boilerplate, and manually generating diagnostic figures (residuals, ROC, confusion matrices). Cloud platforms are often unacceptable due to sensitive or proprietary data regulations.
+
+Key Features:
+1. 100% Local-First: Zero cloud dependencies, zero data leakage.
+2. 4 Core Tasks: Regression, Classification, Clustering, Time-Series with automated Optuna HPO.
+3. Publication Reports: One-click export to HTML/Word/PDF/Markdown with high-res telemetry plots.
+4. AI-Native Architecture (RFC-001): We are implementing a VS Code-inspired Command Bus & Semantic Control Tree snapshot, exposing a local MCP (Model Context Protocol) server so LLM agents (Claude, Cursor, DeepSeek) can deterministically inspect and control the GUI without brittle screenshot/coordinate guessing.
+
+GitHub: https://github.com/Marvin-LiJunZan/ML-Studio
+Live Website: https://marvin-lijunzan.github.io/ML-Studio/
+
+I'd love your feedback on the architecture and roadmap!
+```
+
+---
+
+## 🌍 宣发阵地 7：Reddit (r/MachineLearning, r/datascience, r/LocalLLaMA)
+
+- **社区**：`r/datascience` / `r/MachineLearning` (flair: Project) / `r/LocalLLaMA`
+- **标题**：`I made an open-source, local-first AutoML desktop app that generates full research reports from CSVs (plus an AI-native control layer)`
+- **正文**：直接复制上述 Hacker News 正文，并附上 GitHub 链接与动图预览！
+

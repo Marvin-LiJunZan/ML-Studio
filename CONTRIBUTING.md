@@ -1,5 +1,9 @@
 # 🤝 ML Studio 贡献指南 (Contributing Guide)
 
+<p align="center">
+  <b>简体中文</b> | <a href="CONTRIBUTING_EN.md">English</a>
+</p>
+
 感谢你对 **ML Studio** 感兴趣！无论是修复文档错别字、提交一个 Bug 报告、优化前端交互，还是为底层的 AutoML 算法添砖加瓦，你的每一份贡献都至关重要。
 
 ---

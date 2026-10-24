@@ -13,6 +13,10 @@
 [![AI-Native](https://img.shields.io/badge/Architecture-VS_Code_Style_Config-8A2BE2.svg)](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
+<p align="center">
+  <b>简体中文</b> | <a href="README_EN.md">English</a>
+</p>
+
 [官网首页](https://marvin-lijunzan.github.io/ML-Studio/) · [立即下载](https://github.com/Marvin-LiJunZan/ML-Studio/releases) · [技术白皮书 (RFC)](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md) · [参与共建](CONTRIBUTING.md) · [问题反馈](https://github.com/Marvin-LiJunZan/ML-Studio/issues)
 
 <br/>
