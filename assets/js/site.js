@@ -62,7 +62,7 @@
   /* ---------- 4. 滚动入场 ---------- */
   var revealTargets = []
     .concat(Array.from(document.querySelectorAll(".section-head, .card, .step, .feature")))
-    .concat(Array.from(document.querySelectorAll(".hero-shot, .report-mock, .code-card, .download-card")));
+    .concat(Array.from(document.querySelectorAll(".hero-shot, .report-example, .code-card, .download-card")));
 
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 

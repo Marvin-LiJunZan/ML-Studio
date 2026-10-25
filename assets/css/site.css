@@ -468,3 +468,15 @@ a { color: inherit; text-decoration: none; }
   .btn-lg { width: 100%; }
   .cta-row { gap: 10px; }
 }
+
+/* No-code positioning: a visible action path beside the actual desktop UI. */
+.hero-flow { display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:24px 0 0; list-style:none; }
+.hero-flow li { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--text-2); }
+.hero-flow li:not(:last-child)::after { content:"→"; margin-left:2px; color:var(--text-3); }
+.hero-flow span { display:inline-grid; place-items:center; width:26px; height:26px; border-radius:8px; background:var(--accent-soft); color:var(--accent); font:12px var(--mono); }
+.hero h1 { font-weight:760; line-height:1.16; }
+.task-label { display:inline-block; font-size:12px; font-weight:500; color:var(--accent); background:var(--accent-soft); padding:4px 8px; border-radius:6px; vertical-align:middle; margin-left:5px; }
+.report-example { margin:0; padding:16px; border:1px solid var(--border); border-radius:var(--r-lg); background:var(--surface); box-shadow:var(--shadow-md); }
+.report-example img { width:100%; background:white; border-radius:6px; }
+.report-example figcaption { margin-top:12px; color:var(--text-3); font-size:12px; text-align:center; }
+@media (max-width:420px) { .hero-flow { gap:8px; } .hero-flow li { font-size:12px; gap:5px; } .hero-flow span { width:22px; height:22px; } }

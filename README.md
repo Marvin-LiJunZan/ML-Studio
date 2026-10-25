@@ -1,148 +1,101 @@
 <div align="center">
 
-# ⚡ ML Studio
+# ML Studio
 
-**从表格到实验报告，全学科一条链路跑完**
+**无需写代码的机器学习训练软件**
 
-全学科通用 · 桌面端机器学习工作台 · 本地优先 · 数据不出机器 · 面向 AI 原生控制设计
+导入数据 → 配置任务 → 开始训练
 
-[![Release](https://img.shields.io/github/v/release/Marvin-LiJunZan/ML-Studio?color=blue&logo=github)](https://github.com/Marvin-LiJunZan/ML-Studio/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python)](https://www.python.org/)
+回归 · 分类 · 聚类 · 时间序列 ｜ 可视化操作 ｜ 本地训练
+
+[![Release](https://img.shields.io/github/v/release/Marvin-LiJunZan/ML-Studio?color=534ab7)](https://github.com/Marvin-LiJunZan/ML-Studio/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Desktop](https://img.shields.io/badge/Desktop-Electron-47848F.svg?logo=electron)](https://www.electronjs.org/)
-[![AI-Native](https://img.shields.io/badge/Architecture-VS_Code_Style_Config-8A2BE2.svg)](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-<p align="center">
-  <b>简体中文</b> | <a href="README_EN.md">English</a>
-</p>
+**简体中文** | [English](README_EN.md)
 
-[官网首页](https://marvin-lijunzan.github.io/ML-Studio/) · [立即下载](https://github.com/Marvin-LiJunZan/ML-Studio/releases) · [技术白皮书 (RFC)](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md) · [参与共建](CONTRIBUTING.md) · [问题反馈](https://github.com/Marvin-LiJunZan/ML-Studio/issues)
+[下载桌面版](https://github.com/Marvin-LiJunZan/ML-Studio/releases) · [访问官网](https://marvin-lijunzan.github.io/ML-Studio/) · [问题反馈](https://github.com/Marvin-LiJunZan/ML-Studio/issues) · [参与共建](CONTRIBUTING.md)
 
-<br/>
-
-![ML Studio 工作区](assets/img/app-workspace.png)
+![ML Studio 真实主界面：回归、分类、聚类、时间序列四类任务](assets/img/app-workspace.png)
 
 </div>
 
----
+## 不写训练脚本，也能把模型跑起来
 
-## 💡 为什么做 ML Studio？
+ML Studio 是一款面向表格数据的桌面端机器学习训练软件。把 CSV / Excel 导入软件，在界面中选择任务、目标列、模型与参数，即可开始训练，无需自己编写 Python 训练脚本。
 
-无论是在**理工农医**（物理、化学、生物医药、土木机械、环境材料），还是在**人文社科与经管**（金融量化、计量经济、心理学实验、实证社会学）的跨学科研究与实际应用中，**表格数据（Tabular Data）都是最通用的知识载体**。
+从配置模型、自动调参，到查看指标、诊断图和导出实验报告，都在同一个工作台中完成。适合希望把机器学习用于研究、实验或业务分析，又不想从搭建代码工程开始的用户。
 
-然而，几乎所有学科的研究者与分析师在面对机器学习时，都面临着巨大的鸿沟：
-- **跨学科技术鸿沟**：非 CS 专业的研究人员懂专业理论与实验数据，却常常被配 Python/Conda 环境、排查依赖版本冲突、手写训练脚本与调参代码阻挡在门外；
-- **商业 SaaS 的合规与安全红线**：未公开发表的实验成果、临床患者数据、涉密工程参数、企业财务报表如果上传到外部云端，存在严重的学术泄露与合规风险；
-- **学术与工程交付链路割裂**：模型跑完不是终点，把交叉验证指标、残差图、学习曲线、混淆矩阵、ROC 曲线排版成符合学术与汇报规范的报告往往要耗费大半天。
+## 怎样开始一次训练？
 
-**ML Studio 应运而生**：
-它是一款**全学科通用、零门槛上手、本地优先**的桌面端机器学习工作台。
-把 **智能数据清洗、自动模型筛选、超参寻优、学术级动态诊断、完整实验报告导出** 收敛进同一个极简桌面窗口。
-**拖进一张表格，选一个任务，剩下的交给它跑。纯本地运算，数据绝不出你的电脑。**
+1. **导入数据**：选择 CSV / Excel 文件，查看列类型、缺失情况与数据内容。
+2. **配置任务**：选择回归、分类、聚类或时间序列；回归和分类任务需指定目标列。
+3. **选择模型**：在界面中设置模型、评估方式与参数，可按需启用 Optuna 超参数搜索。
+4. **开始训练**：点击运行，查看训练日志、进度和评估结果。
+5. **查看结果**：比较模型表现，检查任务对应的诊断图，再按需导出报告。
 
----
+无需写代码，仍需根据问题正确选择目标、特征和验证方式。自动调参用于搜索配置，模型是否适用需要结合独立评估与领域知识判断。
 
-## ✨ 核心特性
+## 可以训练什么任务？
 
-| 模块 | 能力亮点 | 说明 |
-| :--- | :--- | :--- |
-| 📊 **四类核心建模** | 回归、分类、聚类、时间序列 | 预置主流算法（LightGBM, XGBoost, CatBoost, RF, Ridge, SVR 等），全自动预处理与编码 |
-| ⚡ **自适应超参寻优** | 基于 Optuna 的多算法搜索 | 支持 TPE、CMA-ES、Random、NSGA-II，配合 Hyperband 剪枝快速提前终止无效试验 |
-| 📈 **学术级训练诊断** | 动态实时监控图表 | 残差图、学习曲线、混淆矩阵、ROC/PR 曲线、过拟合预警、特征相关性热力图 |
-| 📑 **一键科研实验报告** | 多格式工业级导出 | HTML / Markdown / Word / PDF 完整排版，图表与分析结论随报告一次性生成 |
-| 🤖 **AI 原生助手与操控** | 智能解读 + 结构化控制 | 侧栏内置 AI 咨询诊断；更规划了 **VS Code 风格的 `config.json` 架构与命令总线**，支持 AI 直接操控软件全流程！ |
-| 🔒 **纯本地优先** | 隐私零外泄 | 所有数据与模型权重均保存在本机，无外部云端依赖，离线可用 |
+| 你想解决的问题 | 任务类型 | 常用评估指标 |
+| --- | --- | --- |
+| 根据已有特征预测一个数值 | 回归 | R²、RMSE、MAE |
+| 判断样本属于哪一类 | 分类 | Accuracy、F1、AUC |
+| 在没有标签的数据中发现分组 | 聚类 | Silhouette、Davies–Bouldin |
+| 根据时间顺序预测后续数值 | 时间序列 | MAE、RMSE、MAPE |
 
----
+模型池与指标会随任务类型切换，具体可用模型以当前安装版本和已安装的依赖为准。
 
-## 🧠 创新架构：面向 AI Agent 操控设计 (AI-Native)
+## 训练之外，还能做什么？
 
-不同于依赖“屏幕截图+坐标点击”的传统方案，ML Studio 正在推行一套**类 VS Code 的现代化语义控制体系**：
+| 能力 | 作用 |
+| --- | --- |
+| **可视化配置** | 在界面中选择模型、参数与评估方式，减少重复编写训练代码 |
+| **自动调参** | 按设定的搜索空间与试验预算，使用 Optuna 搜索参数 |
+| **训练诊断** | 通过学习曲线、残差图、混淆矩阵、ROC/PR 等适用图表检查模型表现 |
+| **图表解释** | 开发中的增强导出支持相关性热图、SHAP、PDP/ICE，按任务与模型能力生成 |
+| **报告导出** | 整理任务配置、模型指标、参数、图表与训练记录，支持 HTML / Markdown / Word / PDF |
+| **项目管理** | 保存实验配置与记录，方便回看、调整和重新运行 |
 
-```
-                 ┌────────────────────────────────────────────────────────┐
-                 │       AI 助手 / 外部 Agent (Claude, Cursor, DeepSeek)   │
-                 └───────────────┬────────────────────────▲───────────────┘
-          1. 执行高阶指令 (Tool Call) │                        │ 2. 感知 UI 状态快照
-                                 ▼                        │    (getControlTree)
-                 ┌────────────────────────────────────────┴───────────────┐
-                 │              ML Studio 语义控制核心                     │
-                 │                                                        │
-                 │  • mlstudio.config.json (统一配置与 JSON Schema 校验)   │
-                 │  • Command Registry     (全局唯一的命令总线)            │
-                 │  • Semantic UI Tree     (结构化控件树快照)              │
-                 │  • Local MCP Protocol   (标准模型上下文协议服务)        │
-                 └────────────────────────────────────────────────────────┘
-```
+图表以实际计算结果为依据；没有计算或不适用于当前任务的分析，不补造结果。增强导出正在开发验证，是否可用以安装版本为准。
 
-* **VS Code 风格配置 (`mlstudio.config.json`)**：全软件配置透明化，严格遵循 JSON Schema 校验，AI 可自主阅读和调优配置；
-* **命令总线 (Command Registry)**：每个功能（如 `mlstudio.data.import`、`mlstudio.automl.start`）抽象为独立 Command，界面操作与 AI 指令共用同一入口；
-* **控件树快照 (Semantic Control Tree)**：前端暴露结构化 UI 状态，AI 助手毫秒级获取当前视图、可用控件与数据属性，实现 100% 精准操控。
+## 训练在本机完成
 
-> 📄 详细架构定义与规范请参阅：[《RFC-001: 控件树与 AI 助手操控规范》](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md)。
+数据预处理、模型训练与图表计算在本机执行。安装好所需模型与依赖后，本地训练不依赖云端训练平台。
 
----
+AI 解读是可选扩展，需要配置可用的模型服务。启用云端 AI 时，所选分析内容会发送至配置的服务；无需使用 AI 也能运行本地训练。AI 解读不能代替对数据质量、验证方法和模型结果的检查。
 
-## 🚀 极速上手
+## 下载与安装
 
-1. **拖入数据** —— 拖入 CSV / Excel 文件，系统自动完成缺失值扫描、数据类型推断与异常探测；
-2. **选择任务与目标** —— 选择目标预测列，系统自动推荐适用的指标（$R^2$ / RMSE / F1 / AUC 等）；
-3. **一键开始训练** —— 超参搜索进度与诊断指标实时动态渲染，跑完直接一键导出完整实验报告。
+在 [GitHub Releases](https://github.com/Marvin-LiJunZan/ML-Studio/releases) 中选择适合系统的安装包，具体平台、版本与文件名以发布页为准。
 
----
+| 平台 | 安装包形式 |
+| --- | --- |
+| Windows | `.exe` |
+| macOS | `.dmg` / `.zip` |
+| Linux | `.AppImage` / `.deb` |
 
-## 📦 桌面端下载
+安装并打开软件后，先用一份小规模数据完成“导入 → 配置 → 训练 → 查看结果”，再用于正式实验。
 
-前往 [GitHub Releases](https://github.com/Marvin-LiJunZan/ML-Studio/releases) 获取全平台开箱即用安装包：
+## 进阶扩展与开发计划
 
-| 操作系统 | 推荐安装格式 | 说明 |
-| :--- | :--- | :--- |
-| **Windows 10 / 11 (x64)** | `ML-Studio-Setup-1.0.0.exe` | 推荐，带自动安装向导 |
-| **macOS (Apple Silicon)** | `ML-Studio-1.0.0-mac-arm64.dmg` | 针对 M1/M2/M3/M4 系列芯片深度优化 |
-| **Linux (x64)** | `ML-Studio-1.0.0-linux-x86_64.AppImage` | 适用于 Ubuntu / Debian / Fedora 等 |
+日常使用内置模型无需编写代码。需要接入自定义算法的开发者，可参考 [模型插件规范](docs/MODEL_PLUGIN_SPEC.md)。
 
----
+目前的改进重点包括：
 
-## 🗺️ 路线图 (Roadmap 2026)
+- 完善真实任务图表随报告导出，以及三线表和中英文字体排版。
+- 完善 SHAP、PDP/ICE 等解释结果与方法说明。
+- 验证可选 AI 服务对指标和图表的辅助解读。
+- 推进 [RFC-001：控件树与 AI 助手操控规范](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md) 中的命令总线、语义控件树与 MCP 接入设计。
 
-- [x] **v1.0.0 核心基石**
-  - [x] 四类基础建模任务（回归 / 分类 / 聚类 / 时序）
-  - [x] 基于 Optuna 的自动化超参搜索
-  - [x] ECharts 动态诊断图表与多格式报告导出
-- [ ] **v1.1.0 算法与分析增强 (进行中)**
-  - [ ] 深度集成 AutoGluon & FLAML 高性能表格引擎
-  - [ ] 集成 SHAP 模型全局与局部特征可解释性归因图谱
-  - [ ] 支持 `.parquet` 极速加载与千万级行数据采样降采样
-- [ ] **v2.0.0 AI-Native 革命 (共建重点)**
-  - [ ] 落地 RFC-001：实现完整的命令总线与控件树快照
-  - [ ] 内置 Local MCP (Model Context Protocol) 服务端，支持外部 Agent 任意接入操控
-  - [ ] 支持自定义插件机制（自由添加自定义算法与预处理算子）
+RFC 中的 Agent 操控能力属于开发规划，不是使用软件训练模型的前置条件。
 
----
+## 参与共建
 
-## 🤝 诚邀各路大佬与极客共建！
+欢迎围绕训练流程、模型评估、可解释性、报告导出、桌面交互与跨平台打包提交建议。请先阅读 [贡献指南](CONTRIBUTING.md)，通过 [Issues](https://github.com/Marvin-LiJunZan/ML-Studio/issues) 报告问题或讨论方案。
 
-**ML Studio 秉持开源开放、技术向善的理念。我们非常渴望有志同道合的开发者、算法工程师和设计大佬加入！**
+## 许可证
 
-如果你对以下任一方向感兴趣，非常欢迎提交 PR 或在 Issue 中认领：
-- 🌟 **核心算法大师**：优化 AutoML 搜索策略、引入先进可解释性算法 (SHAP, ALE, PDP)、时序模型增强；
-- 🎨 **前端与可视化极客**：基于现代 Web 技术优化数据大屏、交互式特征探索、动效与暗黑主题；
-- ⚙️ **工程与跨平台专家**：优化 Electron 启动体积、PyInstaller 打包调优、跨平台 CI/CD 自动化流水线；
-- 🤖 **Agentic AI 探索者**：协助实现 RFC-001 控件树与 MCP 协议集成，打造最酷的 AI 操控体验。
-
-👉 **请阅读 [贡献指南 (CONTRIBUTING.md)](CONTRIBUTING.md) 开启你的第一次提交！**
-
----
-
-## 💬 交流与反馈
-
-- **GitHub Issues**：报告 Bug 或提交 Feature Request
-- **GitHub Discussions**：讨论设计方案与使用心得
-- **开发者微信群 / QQ 交流群**：欢迎关注项目并在 Issue 中留下交流意向，我们第一时间拉你入核心共建群！
-
----
-
-## 📄 开源许可证
-
-本项目基于 [MIT License](LICENSE) 开源，允许自由商业使用、二次开发与衍生分发。
+本仓库中适用范围内的内容采用 [MIT License](LICENSE)。第三方模型、依赖与插件遵循各自许可证。

@@ -1,148 +1,101 @@
 <div align="center">
 
-# ⚡ ML Studio
+# ML Studio
 
-**From Tabular Data to Research Reports in One Seamless Pipeline**
+**Train machine learning models without writing code**
 
-Universal Pan-Disciplinary Desktop Machine Learning Studio · Local-First · Zero Data Leakage · Designed for AI-Native Control
+Import data → Configure a task → Start training
 
-[![Release](https://img.shields.io/github/v/release/Marvin-LiJunZan/ML-Studio?color=blue&logo=github)](https://github.com/Marvin-LiJunZan/ML-Studio/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python)](https://www.python.org/)
+Regression · Classification · Clustering · Time series | Visual workflow | Local training
+
+[![Release](https://img.shields.io/github/v/release/Marvin-LiJunZan/ML-Studio?color=534ab7)](https://github.com/Marvin-LiJunZan/ML-Studio/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Desktop](https://img.shields.io/badge/Desktop-Electron-47848F.svg?logo=electron)](https://www.electronjs.org/)
-[![AI-Native](https://img.shields.io/badge/Architecture-VS_Code_Style_Config-8A2BE2.svg)](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING_EN.md)
 
-<p align="center">
-  <a href="README.md">简体中文</a> | <b>English</b>
-</p>
+[简体中文](README.md) | **English**
 
-[Website](https://marvin-lijunzan.github.io/ML-Studio/) · [Download](https://github.com/Marvin-LiJunZan/ML-Studio/releases) · [Technical RFC](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md) · [Contributing](CONTRIBUTING.md) · [Issues](https://github.com/Marvin-LiJunZan/ML-Studio/issues)
+[Download](https://github.com/Marvin-LiJunZan/ML-Studio/releases) · [Website](https://marvin-lijunzan.github.io/ML-Studio/) · [Issues](https://github.com/Marvin-LiJunZan/ML-Studio/issues) · [Contribute](CONTRIBUTING_EN.md)
 
-<br/>
-
-![ML Studio Workspace](assets/img/app-workspace.png)
+![Actual ML Studio desktop interface with regression, classification, clustering and time series tasks](assets/img/app-workspace.png)
 
 </div>
 
----
+## From a spreadsheet to a trained model
 
-## 💡 Why ML Studio?
+ML Studio is a desktop application for training machine learning models on tabular data. Import a CSV or Excel file, select a task, target column, model and parameters in the interface, then start training. You do not need to write Python training scripts.
 
-Across **natural sciences, engineering, medicine, economics, finance, and social sciences**, **Tabular Data** (CSV, Excel) remains the most universal format for empirical research and production data.
+Configure models, search hyperparameters, inspect metrics and diagnostic plots, and export experiment reports in one workspace. It is intended for researchers and analysts who want to apply machine learning without starting a coding project.
 
-However, non-computer-science researchers and domain experts face formidable barriers when applying machine learning:
-- **Steep Programming Curve**: Researchers with deep domain expertise are often held back by configuring Python/Conda environments, resolving dependency conflicts, writing repetitive training boilerplate, and debugging plotting scripts;
-- **Strict Privacy & Compliance**: Unpublished academic research, medical records, proprietary engineering parameters, and enterprise financial data cannot be uploaded to third-party cloud SaaS platforms without severe compliance risks;
-- **Fragmented Delivery Pipeline**: Training a model is only halfway. Manually aggregating cross-validation metrics, residual plots, learning curves, confusion matrices, and ROC curves into publication-ready reports consumes days of tedious formatting.
+## Start a training run
 
-**ML Studio solves this end-to-end**:
-A **universal, zero-code, local-first** desktop machine learning workstation.
-It unifies **data cleaning, model benchmarking, hyperparameter optimization, dynamic diagnostic visualization, and automated report generation** into a single, intuitive interface.
-**Drag in a spreadsheet, pick an objective, and let it train. 100% of compute and data stay on your machine.**
+1. **Import data**: open a CSV / Excel file and inspect its columns, missing values and contents.
+2. **Configure the task**: select regression, classification, clustering or time series. Regression and classification require a target column.
+3. **Choose a model**: configure the model, evaluation method and parameters. Optionally enable Optuna hyperparameter search.
+4. **Start training**: run the task and inspect logs, progress and evaluation results.
+5. **Review results**: compare models, inspect applicable diagnostic plots and export a report when needed.
 
----
+A visual workflow removes the need to write training scripts. You still choose suitable targets, features and validation methods. Hyperparameter search explores configurations; independent evaluation and domain knowledge determine whether the model is useful.
 
-## ✨ Key Features
+## What can you train?
 
-| Capability | Highlights | Description |
-| :--- | :--- | :--- |
-| 📊 **4 Core Tasks** | Regression, Classification, Clustering, Time-Series | Built-in top algorithms (LightGBM, XGBoost, CatBoost, RF, Ridge, SVR, etc.) with automatic encoding & scaling |
-| ⚡ **Automated HPO** | Bayesian Hyperparameter Tuning via Optuna | Multi-objective search with TPE, CMA-ES, Random, NSGA-II, plus Hyperband pruning for fast early-stopping |
-| 📈 **Publication Diagnostics** | Real-time interactive visual telemetry | Residual analysis, learning curves, confusion matrices, ROC/PR curves, overfitting alerts, and feature correlation heatmaps |
-| 📑 **One-Click Reports** | Multi-format academic & executive exports | Instant export to HTML, Markdown, Word, and PDF with high-res figures and structured analytical takeaways |
-| 🤖 **AI-Native Control** | Diagnostic Copilot + Structured GUI API | Integrated AI assistant in the sidebar, architected around **VS Code-style `config.json` & Command Bus** for direct agentic control! |
-| 🔒 **Local-First Privacy** | 100% Offline, Zero Cloud Dependencies | Operates entirely on your local machine with zero external network requirements and complete data isolation |
+| Your goal | Task | Common metrics |
+| --- | --- | --- |
+| Predict a numerical value from features | Regression | R², RMSE, MAE |
+| Assign a category to each sample | Classification | Accuracy, F1, AUC |
+| Discover groups in unlabelled data | Clustering | Silhouette, Davies–Bouldin |
+| Predict future values from ordered observations | Time series | MAE, RMSE, MAPE |
 
----
+The model catalogue and metrics change with the task. Availability depends on the installed version and model dependencies.
 
-## 🧠 Breakthrough: Designed for AI Agent Control (AI-Native)
+## Beyond training
 
-Unlike fragile "screen capture + pixel coordinate click" approaches (Computer Use / VLM), ML Studio adopts a **VS Code-inspired structural semantic control layer**:
+| Capability | What it provides |
+| --- | --- |
+| **Visual configuration** | Select models, parameters and evaluation methods without repetitive training code |
+| **Hyperparameter search** | Use Optuna within the search space and trial budget you configure |
+| **Training diagnostics** | Inspect applicable learning curves, residuals, confusion matrices and ROC/PR curves |
+| **Model interpretation** | Enhanced exports under development include correlation heatmaps, SHAP and PDP/ICE where supported |
+| **Experiment reports** | Export task configuration, metrics, parameters, charts and logs as HTML / Markdown / Word / PDF |
+| **Project management** | Save experiment configuration and records for review and reruns |
 
-```
-                 ┌────────────────────────────────────────────────────────┐
-                 │       AI Agents / Assistants (Claude, Cursor, DeepSeek) │
-                 └───────────────┬────────────────────────▲───────────────┘
-          1. Execute Commands (Tool Calls) │              │ 2. Observe UI State Tree
-                                 ▼                        │    (getControlTree)
-                 ┌────────────────────────────────────────┴───────────────┐
-                 │              ML Studio Semantic Control Core           │
-                 │                                                        │
-                 │  • mlstudio.config.json (Schema-validated settings)    │
-                 │  • Command Registry     (Global unified action bus)    │
-                 │  • Semantic UI Tree     (Lightweight structural state) │
-                 │  • Local MCP Protocol   (Standard Model Context spec)  │
-                 └────────────────────────────────────────────────────────┘
-```
+Charts must reflect computed results. Unavailable or inapplicable analyses are not fabricated. Enhanced exports are being validated; availability depends on the installed release.
 
-* **VS Code-Style Configuration (`mlstudio.config.json`)**: Transparent, strongly typed configuration with JSON Schema validation, allowing AI to inspect and safely tweak runtime preferences;
-* **Command Registry**: Every capability (e.g., `mlstudio.data.import`, `mlstudio.automl.start`) is decoupled into an explicit command, shared equally by human GUI clicks and AI tool invocations;
-* **Semantic Control Tree**: Exposes a real-time JSON snapshot of UI widgets and dataset properties, giving AI agents 100% deterministic, millisecond-fast control with zero visual hallucinations.
+## Training runs on your computer
 
-> 📄 Read the complete technical specification: [RFC-001: Agentic GUI & Semantic Control Tree Specification](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md).
+Data preprocessing, model training and chart computation run locally. Once the required models and dependencies are installed, local training does not depend on a cloud training platform.
 
----
+AI interpretation is optional and requires a working model service configuration. Enabling a cloud AI service sends the selected analysis content to that service. Local training works without AI interpretation. AI commentary does not replace checks of data quality, validation methods or model results.
 
-## 🚀 Quick Start in 3 Steps
+## Download and install
 
-1. **Import Data** —— Drag and drop any CSV or Excel file. Automatic column type detection, missing value profiling, and anomaly scanning run instantly;
-2. **Select Task & Target** —— Pick Regression, Classification, Clustering, or Time-Series, and select your prediction target;
-3. **Train & Export** —— Watch automated hyperparameter optimization and dynamic diagnostics in real-time. Export complete publication-grade reports upon completion.
+Choose an installer from [GitHub Releases](https://github.com/Marvin-LiJunZan/ML-Studio/releases). The release page is the reference for available versions, platforms and filenames.
 
----
+| Platform | Package formats |
+| --- | --- |
+| Windows | `.exe` |
+| macOS | `.dmg` / `.zip` |
+| Linux | `.AppImage` / `.deb` |
 
-## 📦 Desktop Downloads
+After installation, use a small dataset to complete the import, configuration, training and review workflow before starting a full experiment.
 
-Visit [GitHub Releases](https://github.com/Marvin-LiJunZan/ML-Studio/releases) for zero-setup, pre-packaged desktop installers:
+## Extensions and development plans
 
-| Platform | Package Format | Notes |
-| :--- | :--- | :--- |
-| **Windows 10 / 11 (x64)** | `ML-Studio-Setup-1.0.0.exe` | Recommended installer with auto-setup |
-| **macOS (Apple Silicon)** | `ML-Studio-1.0.0-mac-arm64.dmg` | Optimized natively for Apple M-series chips |
-| **Linux (x64)** | `ML-Studio-1.0.0-linux-x86_64.AppImage` | Compatible with Ubuntu, Debian, Fedora, Arch, etc. |
+Using the built-in models does not require coding. Developers integrating custom algorithms can consult the [model plugin specification](docs/MODEL_PLUGIN_SPEC.md).
 
----
+Current improvement areas include:
 
-## 🗺️ Roadmap (2026)
+- Exporting actual task charts with reports, with three-line tables and consistent Chinese/Latin typography.
+- Improving SHAP, PDP/ICE and accompanying method descriptions.
+- Validating optional AI interpretation of metrics and charts.
+- Developing the command registry, semantic control tree and MCP integration proposed in [RFC-001](docs/rfcs/RFC-001-AGENTIC-GUI-SPECIFICATION.md).
 
-- [x] **v1.0.0 Foundation**
-  - [x] 4 Core modeling paradigms (Regression, Classification, Clustering, Time-Series)
-  - [x] Automated Bayesian HPO powered by Optuna
-  - [x] ECharts interactive diagnostics & multi-format report exports
-- [ ] **v1.1.0 Algorithm & Diagnostic Enhancements (In Progress)**
-  - [ ] Deep integration with AutoGluon & FLAML tabular backbones
-  - [ ] SHAP (SHapley Additive exPlanations) global & local feature attributions
-  - [ ] Fast `.parquet` ingestion and large-scale dataset subsampling
-- [ ] **v2.0.0 AI-Native Revolution (Co-Development Focus)**
-  - [ ] Full implementation of RFC-001 (Command Bus & Semantic UI Tree)
-  - [ ] Embedded local MCP (Model Context Protocol) server for seamless Cursor & Claude integration
-  - [ ] Extensible plugin ecosystem for user-defined algorithms and transforms
+Agent control described in the RFC is a development plan, not a requirement for training models in the application.
 
----
+## Contribute
 
-## 🤝 Calling All Contributors & Hackers!
+Contributions to training workflows, evaluation, interpretability, reports, desktop interaction and platform packaging are welcome. Read the [contribution guide](CONTRIBUTING_EN.md), then use [Issues](https://github.com/Marvin-LiJunZan/ML-Studio/issues) to report a problem or discuss a proposal.
 
-**ML Studio is fully open-source under the MIT license. We warmly welcome developers, researchers, and designers worldwide to build with us!**
+## License
 
-We are actively seeking contributors in the following areas:
-- 🌟 **ML & Algorithm Engineers**: Enhancing AutoML strategies, integrating SHAP/ALE/PDP interpretability, and expanding time-series models;
-- 🎨 **Frontend & Visualization Enthusiasts**: Crafting dynamic ECharts dashboards, accessible scientific palettes, and responsive interactions;
-- ⚙️ **Systems & Cross-Platform Specialists**: Packaging optimizations (Electron + PyInstaller), cross-platform CI/CD with GitHub Actions;
-- 🤖 **Agentic AI Pioneers**: Collaborating on RFC-001 implementation, MCP server integration, and automated Agent GUI workflows.
-
-👉 **Check out our [Contributing Guide (CONTRIBUTING.md)](CONTRIBUTING.md) to get started!**
-
----
-
-## 💬 Community & Feedback
-
-- **GitHub Issues**: For bug reports, feature requests, and technical queries
-- **GitHub Discussions**: For architectural brainstorming and user showcases
-- **Discord / Community Groups**: Coming soon — open an issue or leave a message to connect with the core team!
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE) — free for academic, commercial, and personal use.
+Content covered by this repository's license uses the [MIT License](LICENSE). Third-party models, dependencies and plugins retain their own licenses.

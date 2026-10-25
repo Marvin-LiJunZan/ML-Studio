@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ML Studio — 桌面端机器学习工作台</title>
-<meta name="description" content="ML Studio 把数据导入、模型选择、超参搜索、训练监控与实验报告收进同一个桌面应用。数据只在本机，无需编写训练脚本。">
+<title>ML Studio — 无需写代码的机器学习训练软件</title>
+<meta name="description" content="无需编写训练脚本，在 ML Studio 界面中导入 CSV / Excel、配置任务并训练模型。支持回归、分类、聚类与时间序列，训练与图表计算在本机完成。">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="theme-color" content="#0E0F14" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
-<meta property="og:title" content="ML Studio — 桌面端机器学习工作台">
-<meta property="og:description" content="从表格到实验报告，一条链路跑完。数据不出本机。">
+<meta property="og:title" content="ML Studio — 无需写代码的机器学习训练软件">
+<meta property="og:description" content="不会写代码，也能训练模型。导入数据、配置任务、开始训练，在桌面界面中完成机器学习流程。">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/site.css">
@@ -30,10 +30,10 @@
     </a>
 
     <nav class="nav-links" id="navLinks" aria-label="站点导航">
-      <a href="#capabilities">能力</a>
-      <a href="#workflow">工作流</a>
+      <a href="#workflow">如何训练</a>
+      <a href="#capabilities">任务类型</a>
       <a href="#report">实验报告</a>
-      <a href="#plugins">插件</a>
+      <a href="#plugins">进阶扩展</a>
       <a href="#desktop">桌面端</a>
     </nav>
 
@@ -60,31 +60,75 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>本地优先 · 桌面端机器学习工作台</p>
-        <h1>从表格到实验报告<br><span class="hl">一条链路跑完</span></h1>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>无需代码 · 机器学习训练软件</p>
+        <h1>不写代码，<br><span class="hl">也能训练模型</span></h1>
         <p class="lede">
-          ML Studio 把数据导入、模型选择、超参数搜索、训练监控和报告导出收进同一个窗口。
-          不用写训练脚本，也不把数据传到别人的服务器。
+          把 CSV / Excel 导入 ML Studio，在界面中选择任务、配置模型并开始训练。
+          无需编写 Python 训练脚本，调参、查看结果和导出报告也能在同一个窗口完成。
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary btn-lg" href="#download">下载 v1.0.0</a>
-          <a class="btn btn-outline btn-lg" href="#capabilities">看看能做什么</a>
+          <a class="btn btn-primary btn-lg" href="#download">下载桌面版</a>
+          <a class="btn btn-outline btn-lg" href="#workflow">看看怎么训练</a>
         </div>
+        <ol class="hero-flow" aria-label="无需代码的训练流程">
+          <li><span>01</span> 导入数据</li>
+          <li><span>02</span> 配置任务</li>
+          <li><span>03</span> 开始训练</li>
+        </ol>
         <ul class="hero-meta">
           <li>Windows / macOS / Linux</li>
-          <li>数据只留本机</li>
+          <li>模型在本机训练</li>
           <li>中文 / English 界面</li>
         </ul>
       </div>
 
       <figure class="hero-shot">
         <div class="shot-frame">
-          <img src="assets/img/app-workspace.png" width="1434" height="900"
+          <img src="assets/img/app-workspace.png" width="1424" height="835"
                alt="ML Studio 新建任务界面：回归、分类、聚类、时间序列四类任务卡片，每张卡片列出可选模型与评估指标"
                fetchpriority="high" decoding="async">
         </div>
-        <figcaption>新建任务：选一类任务，模型、指标和默认参数会一起就位</figcaption>
+        <figcaption>真实软件界面 · 回归 / 分类 / 聚类 / 时间序列，按任务选择模型与指标</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <!-- ============ WORKFLOW ============ -->
+  <section class="section section-alt" id="workflow">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="kicker">工作流</p>
+        <h2>从导入数据，到开始训练</h2>
+        <p class="section-sub">通过可视化界面完成建模流程。你决定预测什么、使用哪些数据，软件负责执行训练与计算。</p>
+      </header>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-no">01</span>
+          <h3>导入数据</h3>
+          <p>选择 CSV / Excel 文件，在界面中查看列类型与缺失情况。</p>
+        </li>
+        <li class="step">
+          <span class="step-no">02</span>
+          <h3>选择任务</h3>
+          <p>选择回归、分类、聚类或时序；监督任务还需指定目标列。</p>
+        </li>
+        <li class="step">
+          <span class="step-no">03</span>
+          <h3>配置模型</h3>
+          <p>选择模型与参数，可按需启用 Optuna 超参数搜索。</p>
+        </li>
+        <li class="step">
+          <span class="step-no">04</span>
+          <h3>开始训练</h3>
+          <p>点击运行，在同一个窗口查看训练日志、进度与评估结果。</p>
+        </li>
+        <li class="step">
+          <span class="step-no">05</span>
+          <h3>查看与导出结果</h3>
+          <p>查看任务对应的指标和诊断图，再按需导出实验报告。</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -93,8 +137,8 @@
     <div class="wrap">
       <header class="section-head">
         <p class="kicker">能力</p>
-        <h2>四种任务，一套工作流</h2>
-        <p class="section-sub">选定任务类型后，模型池、评估指标、默认参数都会跟着切换，不必自己拼装。</p>
+        <h2>你想解决的问题，从这里开始</h2>
+        <p class="section-sub">预测数值、识别类别、发现分组或预测时间序列。在界面中选择任务，模型与评估指标随之切换。</p>
       </header>
 
       <div class="cards">
@@ -102,7 +146,7 @@
           <div class="card-icon tone-iris" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><polyline points="17 7 21 7 21 11"/></svg>
           </div>
-          <h3>回归</h3>
+          <h3>预测一个数值 <span class="task-label">回归</span></h3>
           <p>从特征预测连续数值，适合价格估算、需求预测、风险评分。</p>
           <div class="chips"><span>Random Forest</span><span>XGBoost</span><span>CatBoost</span><span>GBRT</span><span>MLP</span></div>
           <div class="chips chips-metric"><span>R²</span><span>RMSE</span><span>MAE</span><span>MSE</span></div>
@@ -112,7 +156,7 @@
           <div class="card-icon tone-green" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
-          <h3>分类</h3>
+          <h3>判断属于哪一类 <span class="task-label">分类</span></h3>
           <p>给样本打上类别，适合垃圾信息识别、诊断辅助、客户分群。</p>
           <div class="chips"><span>Random Forest</span><span>XGBoost</span><span>CatBoost</span><span>SVM</span><span>MLP</span></div>
           <div class="chips chips-metric"><span>Accuracy</span><span>F1</span><span>AUC</span><span>Precision</span></div>
@@ -122,7 +166,7 @@
           <div class="card-icon tone-violet" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="16" r="3"/><circle cx="16" cy="8" r="2"/><circle cx="8" cy="16" r="2"/></svg>
           </div>
-          <h3>聚类</h3>
+          <h3>发现数据中的分组 <span class="task-label">聚类</span></h3>
           <p>在没有标签的数据里找自然分组，适合市场细分、异常发现。</p>
           <div class="chips"><span>K-Means</span><span>DBSCAN</span><span>Hierarchical</span><span>GMM</span></div>
           <div class="chips chips-metric"><span>Silhouette</span><span>Davies-Bouldin</span></div>
@@ -132,7 +176,7 @@
           <div class="card-icon tone-cyan" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
-          <h3>时间序列</h3>
+          <h3>预测后续的趋势 <span class="task-label">时间序列</span></h3>
           <p>从序列数据预测后续走势，适合销量、气象、容量规划。</p>
           <div class="chips"><span>ARIMA</span><span>Prophet</span><span>LSTM</span><span>XGBoost</span></div>
           <div class="chips chips-metric"><span>MAPE</span><span>RMSE</span><span>MAE</span></div>
@@ -141,79 +185,28 @@
     </div>
   </section>
 
-  <!-- ============ WORKFLOW ============ -->
-  <section class="section section-alt" id="workflow">
-    <div class="wrap">
-      <header class="section-head">
-        <p class="kicker">工作流</p>
-        <h2>五步，中间不用换工具</h2>
-        <p class="section-sub">每一步的产物都留在同一个项目里，回头改参数或重跑都不用重新装配环境。</p>
-      </header>
-
-      <ol class="steps">
-        <li class="step">
-          <span class="step-no">01</span>
-          <h3>导入数据</h3>
-          <p>拖进 Excel 或 CSV，列类型与缺失情况自动读出来。</p>
-        </li>
-        <li class="step">
-          <span class="step-no">02</span>
-          <h3>选择任务</h3>
-          <p>回归 / 分类 / 聚类 / 时序，模型池与指标随任务切换。</p>
-        </li>
-        <li class="step">
-          <span class="step-no">03</span>
-          <h3>配置与搜索</h3>
-          <p>内置 TPE、贝叶斯等搜索器，试验次数自己定，也可只跑单组参数。</p>
-        </li>
-        <li class="step">
-          <span class="step-no">04</span>
-          <h3>训练监控</h3>
-          <p>实时日志与优化进度同屏，可中断，下次接着跑。</p>
-        </li>
-        <li class="step">
-          <span class="step-no">05</span>
-          <h3>生成报告</h3>
-          <p>一键导出 HTML、PDF、Word 三种格式的实验报告。</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <!-- ============ REPORT ============ -->
   <section class="section" id="report">
     <div class="wrap report-grid">
       <div class="report-copy">
         <p class="kicker">实验报告</p>
-        <h2>训练跑完，报告也写完了</h2>
+        <h2>训练之后，看懂模型表现</h2>
         <p class="lede">
-          报告不是把数字堆在一起。每个指标都带一句"怎么读"，指标卡按质量分色——
-          R² 是优秀还是过拟合，不用自己去对照阈值。
+          用性能指标比较模型，用诊断图检查误差；对支持的任务和模型，进一步查看相关性、SHAP 与 PDP/ICE。
+          把指标、图表和方法说明整理进报告，便于复核与汇报。
         </p>
         <ul class="check-list">
-          <li>七个固定章节，从概览到训练日志一次成型</li>
-          <li>三种格式共用同一套版式，不会导出后各自变形</li>
-          <li>图表配色与软件内一致，同一个模型在不同图里同色</li>
+          <li>报告包含任务配置、评估指标、模型参数与训练记录</li>
+          <li>支持 HTML、Markdown、Word、PDF 等导出格式</li>
+          <li>图表随任务与模型能力生成，未计算的分析不补造结果</li>
         </ul>
-        <p class="note">下面是根据实际报告模板绘制的结构示意。</p>
+        <p class="note">右侧为合成示例任务实际计算的 SHAP 图，仅用于展示输出形式。</p>
       </div>
 
-      <div class="report-mock" aria-hidden="true">
-        <div class="mock-head">
-          <div class="mock-badge">实验报告</div>
-          <div class="mock-title">回归 · Random Forest</div>
-          <div class="mock-meta">生成于 2026-10-23 · 随机 K 折交叉验证</div>
-        </div>
-        <div class="mock-metrics">
-          <div class="mock-metric good"><span class="mm-label">R²</span><span class="mm-value">0.912</span><span class="mm-tag">良好</span></div>
-          <div class="mock-metric"><span class="mm-label">RMSE</span><span class="mm-value">2.84</span><span class="mm-tag">达标</span></div>
-          <div class="mock-metric"><span class="mm-label">MAE</span><span class="mm-value">1.97</span><span class="mm-tag">达标</span></div>
-        </div>
-        <div class="mock-toc">
-          <span>01 实验概览</span><span>02 模型指标</span><span>03 图表</span>
-          <span>04 最优参数</span><span>05 特征重要性</span><span>06 调参日志</span><span>07 训练日志</span>
-        </div>
-      </div>
+      <figure class="report-example">
+        <img src="assets/img/report-shap-example.png" width="2421" height="1222" loading="lazy" decoding="async" alt="合成回归示例任务实际计算的 SHAP 全局贡献分布，展示不同特征对模型预测的贡献">
+        <figcaption>示例输出 · SHAP 全局解释（合成数据，非性能承诺）</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -221,15 +214,15 @@
   <section class="section section-alt" id="plugins">
     <div class="wrap plug-grid">
       <div class="plug-copy">
-        <p class="kicker">插件</p>
-        <h2>自己的模型，不用等版本更新</h2>
+        <p class="kicker">进阶扩展 · 面向开发者</p>
+        <h2>需要自定义模型？再进一步</h2>
         <p class="lede">
-          模型和搜索算法都能做成插件接入。插件是独立目录，不碰核心代码，删掉即回退。
+          日常使用内置模型无需编写代码。需要接入自定义算法时，开发者可通过插件适配模型与搜索策略。
         </p>
         <ul class="check-list">
           <li><strong>模型与调参器都能插</strong>：<code>model.py</code> 提供适配器，<code>tuner.py</code> 提供搜索策略</li>
           <li><strong>依赖跟着插件走</strong>：<code>requirements.txt</code> 单独安装，不污染主环境</li>
-          <li><strong>清单即接口</strong>：<code>plugin.json</code> 声明任务类型、参数字间与入口</li>
+          <li><strong>清单即接口</strong>：<code>plugin.json</code> 声明任务类型、参数空间与入口</li>
         </ul>
         <p class="note">已内置 PINN 等自定义模型的接入样例。</p>
       </div>
@@ -262,33 +255,33 @@
       <header class="section-head">
         <p class="kicker">桌面端</p>
         <h2>跑在你自己的机器上</h2>
-        <p class="section-sub">一个本地服务加一层桌面外壳，联网只为查文档，训练不依赖云端。</p>
+        <p class="section-sub">安装桌面版，通过界面完成建模。模型训练与图表计算在本机执行，可选 AI 服务按配置连接。</p>
       </header>
 
       <div class="feature-grid">
         <div class="feature">
-          <h3>数据不出本机</h3>
-          <p>上传即读本地文件，没有远端存储，也没有隐性的数据上传。</p>
+          <h3>本地训练</h3>
+          <p>导入的数据用于本机训练与图表计算，无需上传到云端训练平台。</p>
         </div>
         <div class="feature">
           <h3>可离线训练</h3>
-          <p>断网照样能跑完一轮训练并导出报告，适合内网与现场环境。</p>
+          <p>已安装的本地模型与依赖可在离线环境下训练；云端 AI 解读需要联网。</p>
         </div>
         <div class="feature">
-          <h3>中断可续</h3>
-          <p>训练中断后重新打开，能在原任务上继续，不必从头再跑。</p>
+          <h3>保存实验项目</h3>
+          <p>保存任务配置与实验记录，方便回看、调整参数和重新运行。</p>
         </div>
         <div class="feature">
           <h3>明暗双主题</h3>
-          <p>两套配色都按 WCAG AA 校准过对比度，长时间看不刺眼。</p>
+          <p>按使用习惯切换浅色或深色界面。</p>
         </div>
         <div class="feature">
           <h3>中英双语</h3>
-          <p>界面语言可切换，术语与报告措辞同步，不用两套习惯。</p>
+          <p>支持中文与 English 界面，便于不同语言习惯的用户使用。</p>
         </div>
         <div class="feature">
-          <h3>AI 助手在内</h3>
-          <p>结果看不懂时，可以在侧栏直接问，不必切出去翻文档。</p>
+          <h3>可选 AI 解读</h3>
+          <p>按需配置模型服务辅助理解结果；启用云端服务时，会发送所选分析内容。</p>
         </div>
       </div>
     </div>
@@ -300,8 +293,8 @@
       <div class="download-card">
         <div class="download-copy">
           <p class="kicker">下载</p>
-          <h2>三个平台都有</h2>
-          <p class="lede">Windows、macOS、Linux 均已打包。首次启动需加载本地推理引擎，约 10–30 秒。</p>
+          <h2>从你的第一份数据开始</h2>
+          <p class="lede">前往 Releases 选择适合系统的桌面安装包。安装后导入一份表格，选择任务，开始训练。</p>
           <div class="cta-row">
             <a class="btn btn-primary btn-lg" data-repo download-link href="https://github.com/Marvin-LiJunZan/ML-Studio/releases" target="_blank" rel="noopener">前往 Releases 下载</a>
             <a class="btn btn-outline btn-lg" href="#workflow">先看看怎么用</a>
@@ -330,10 +323,10 @@
       <span>ML Studio</span>
     </div>
     <nav class="footer-links" aria-label="页脚导航">
-      <a href="#capabilities">能力</a>
-      <a href="#workflow">工作流</a>
+      <a href="#workflow">如何训练</a>
+      <a href="#capabilities">任务类型</a>
       <a href="#report">实验报告</a>
-      <a href="#plugins">插件</a>
+      <a href="#plugins">进阶扩展</a>
       <a data-repo href="https://github.com/Marvin-LiJunZan/ML-Studio" target="_blank" rel="noopener">GitHub</a>
     </nav>
     <p class="footer-note">© <span id="year">2026</span> ML Studio</p>
